@@ -1,0 +1,1038 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #1a0a10;
+    color: #2b0f18;
+}
+
+.magazine-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ============ PAGE BASE ============ */
+.page {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 8% 120px;
+    background: #fdf6f2;
+}
+
+.page.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-label {
+    color: #d1478f;
+    letter-spacing: 3px;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.page-title {
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 35px;
+    color: #32121d;
+}
+
+/* ============ PAGE 1 — EDITOR'S NOTE ============ */
+.editor-content {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.editor-photo {
+    width: 260px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.letter-text {
+    max-width: 600px;
+    font-size: 17px;
+    line-height: 1.9;
+    font-style: italic;
+}
+
+
+/* ============ PAGE 2 — SIDE-BY-SIDE LAYOUT ============ */
+.cover-story-layout {
+    display: flex;
+    gap: 45px;
+    align-items: flex-start;
+}
+
+.cover-story-content {
+    flex: 1.4;
+    min-width: 0;
+}
+
+.cover-story-content p {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.fact-list {
+    list-style: none;
+}
+
+.fact-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e8c9d5;
+    font-size: 15px;
+}
+
+/* PHOTO GRID — sits beside the text */
+.cover-photo-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.cs-photo {
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* First photo spans both columns at the top, taller */
+.cs-photo-large {
+    grid-column: span 2;
+    min-height: 220px;
+}
+
+/* ============ PAGE 3 — PHOTO SPREAD ============ */
+.photo-spread-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 220px;
+    gap: 16px;
+    max-width: 950px;
+}
+
+.spread-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* First photo is the feature — spans 2 columns and 2 rows */
+.spread-photo-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* ============ PAGE 4 — LOVE LIST ============ */
+.love-list {
+    max-width: 650px;
+    font-size: 18px;
+    line-height: 2.6;
+    padding-left: 30px;
+}
+
+.love-list li {
+    padding-left: 10px;
+}
+
+.love-list li::marker {
+    color: #d1478f;
+    font-weight: bold;
+}
+
+/* ============ PAGE 5 — QUIRKS ============ */
+.quirks-intro {
+    max-width: 600px;
+    font-size: 17px;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #6b3346;
+}
+
+.quirks-list {
+    margin-bottom: 30px;
+}
+
+.quirks-outro {
+    max-width: 600px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #6b3346;
+}
+
+/* ============ PAGE 6 — TIMELINE ============ */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 850px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.timeline-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.timeline-item img {
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    flex-shrink: 0;
+}
+
+.timeline-text h3 {
+    color: #d1478f;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.timeline-text p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+/* ============ PAGE 7 — QUOTES ============ */
+.quote-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+}
+
+.quote-card {
+    background: white;
+    border-left: 4px solid #f59abb;
+    padding: 25px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.quote-card p {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.quote-author {
+    color: #d1478f;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* ============ PAGE 8 — NEWSPAPER ============ */
+
+.newspaper-page {
+    background: #f4f0e6;
+    color: #171717;
+    padding: 35px 35px 140px;
+    /* ↑ extra bottom padding so content clears the fixed nav bar */
+    font-family: Georgia, "Times New Roman", serif;
+    min-height: 100vh;
+}
+
+.newspaper-top {
+    text-align: center;
+}
+
+.newspaper-small {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+}
+
+.newspaper-top h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 45px;
+    line-height: 0.9;
+    margin: 5px 0 15px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.newspaper-info {
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.newspaper-line {
+    width: 100%;
+    height: 2px;
+    background: #171717;
+    margin: 12px 0;
+}
+
+.breaking {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin: 15px 0 5px;
+}
+
+.news-headline {
+    text-align: center;
+    font-size: 48px;
+    line-height: 0.95;
+    margin: 5px 0 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.news-subheadline {
+    text-align: center;
+    font-style: italic;
+    font-size: 15px;
+    max-width: 700px;
+    margin: 0 auto 15px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-top: 18px;
+}
+
+.news-main-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+}
+
+.photo-caption {
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.side-news {
+    border-left: 1px solid #171717;
+    padding-left: 18px;
+}
+
+.side-news h3,
+.story-columns h3 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.side-news p {
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.story-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.story-columns article {
+    border-right: 1px solid #171717;
+    padding-right: 15px;
+}
+
+.story-columns article:last-child {
+    border-right: none;
+}
+
+.story-columns img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    display: block;
+    margin: 8px 0;
+}
+
+.story-columns p {
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.newspaper-footer {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.big-footer {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.newspaper-footer p:last-child {
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+/* ============ PAGE 9 — HOROSCOPE ============ */
+
+.horoscope-wrapper {
+    position: relative;
+    max-width: 650px;
+
+    background: radial-gradient(circle at top left, #3a1526, #1f0c17 70%);
+    color: #fff4e8;
+
+    padding: 45px 40px;
+    border-radius: 16px;
+
+    border: 1px solid #f59abb;
+    box-shadow: 0 0 0 1px rgba(245, 154, 187, 0.25),
+                0 20px 40px rgba(0, 0, 0, 0.35);
+
+    overflow: hidden;
+}
+
+/* decorative corner glow */
+.horoscope-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(245, 154, 187, 0.35), transparent 70%);
+    pointer-events: none;
+}
+
+.horoscope-badge {
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+}
+
+.horoscope-content {
+    position: relative;
+    z-index: 2;
+}
+
+.prediction {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.prediction-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.prediction p {
+    font-size: 16px;
+    line-height: 1.8;
+    font-style: italic;
+    color: #fce9ef;
+}
+
+.prediction-divider {
+    text-align: center;
+    color: #f59abb;
+    letter-spacing: 10px;
+    font-size: 12px;
+    margin: 22px 0;
+    opacity: 0.7;
+}
+
+.horoscope-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #f59abb;
+    opacity: 0.85;
+}
+
+/* ============ PAGE 10 — LETTER FROM ME ============ */
+.letter-page {
+    max-width: 650px;
+}
+
+.letter-page .letter-text {
+    font-size: 17px;
+    line-height: 1.9;
+    font-style: italic;
+}
+
+/* =================================
+   FINAL PAGE — BACK COVER
+================================= */
+
+/* Overrides base .page padding so this page reaches
+   true screen edges — guaranteed regardless of file order */
+.page.back-cover {
+    padding: 25px;
+    min-height: 100vh;
+}
+
+.back-cover {
+    position: relative;
+    overflow: hidden;
+
+    background: #241f22;
+    color: #fff4e8;
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.back-cover::before {
+    content: "";
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+
+    border: 1px solid rgba(255, 244, 232, 0.8);
+
+    pointer-events: none;
+}
+
+.back-top {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px 25px;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.back-title {
+    position: relative;
+    z-index: 5;
+
+    text-align: center;
+
+    margin-top: 30px;
+}
+
+.back-title h1 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(55px, 9vw, 100px);
+
+    line-height: 0.9;
+
+    letter-spacing: -3px;
+
+    color: #f29abb;
+}
+
+.back-title p {
+    margin: 15px 0 5px;
+
+    font-size: 28px;
+
+    font-style: italic;
+
+    color: #fff1dc;
+}
+
+.heart {
+    font-size: 28px;
+}
+
+.back-photo {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.48;
+
+    z-index: 1;
+}
+
+.back-cover::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(20, 16, 18, 0.75),
+        rgba(20, 16, 18, 0.25),
+        rgba(20, 16, 18, 0.9)
+    );
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.back-cover > * {
+    position: relative;
+    z-index: 5;
+}
+
+.back-quote {
+    position: absolute;
+
+    left: 55px;
+    top: 30%;
+
+    font-family: cursive;
+
+    font-size: 19px;
+
+    line-height: 1.3;
+
+    color: #f29abb;
+}
+
+.back-quote span {
+    font-size: 25px;
+}
+
+.features {
+    position: absolute;
+
+    right: 55px;
+    top: 30%;
+
+    width: 220px;
+}
+
+.features h2 {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-size: 25px;
+
+    color: #f29abb;
+
+    border-bottom: 1px solid #fff4e8;
+
+    padding-bottom: 5px;
+}
+
+.features p {
+    margin: 7px 0;
+
+    font-size: 14px;
+}
+
+.features small {
+    font-size: 10px;
+
+    font-style: italic;
+}
+
+.rahii-brand {
+    position: absolute;
+
+    bottom: 150px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 80%;
+
+    text-align: center;
+}
+
+.rahii-brand h2 {
+    margin: 0;
+
+    font-family: cursive;
+
+    font-size: 55px;
+
+    color: #f29abb;
+}
+
+.brand-line {
+    width: 150px;
+
+    height: 1px;
+
+    background: #fff4e8;
+
+    margin: 5px auto 10px;
+}
+
+.limited {
+    margin: 0;
+
+    font-size: 15px;
+
+    letter-spacing: 5px;
+
+    font-weight: bold;
+}
+
+.qualities {
+    margin-top: 12px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.magazine-joke {
+    position: absolute;
+
+    bottom: 65px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    width: 80%;
+}
+
+.magazine-joke p {
+    margin: 4px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.magazine-joke span {
+    font-size: 18px;
+}
+
+.barcode {
+    position: absolute;
+
+    bottom: 30px;
+    left: 55px;
+
+    text-align: center;
+}
+
+.bars {
+    width: 100px;
+    height: 35px;
+
+    background: repeating-linear-gradient(
+        90deg,
+        #fff4e8 0px,
+        #fff4e8 2px,
+        transparent 2px,
+        transparent 4px,
+        #fff4e8 4px,
+        #fff4e8 5px,
+        transparent 5px,
+        transparent 8px
+    );
+}
+
+.barcode p {
+    margin: 3px 0;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+}
+
+.final-message {
+    position: absolute;
+
+    right: 45px;
+    bottom: 25px;
+
+    text-align: center;
+
+    font-family: cursive;
+
+    font-size: 16px;
+
+    color: #f29abb;
+
+    transform: rotate(-5deg);
+}
+
+.final-message p {
+    margin-bottom: 3px;
+}
+
+.final-message span {
+    font-size: 22px;
+}
+
+/* ============ NAVIGATION BAR ============ */
+.nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(50, 18, 29, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 6%;
+    z-index: 10;
+}
+
+.nav-bar button {
+    background: transparent;
+    border: 1px solid #f59abb;
+    color: #f59abb;
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.nav-bar button:hover {
+    background: #f59abb;
+    color: #32121d;
+}
+
+.nav-bar button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.page-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(245, 154, 187, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #f59abb;
+    width: 22px;
+    border-radius: 4px;
+}
+
+
+/* ============ MOBILE ============ */
+@media (max-width: 700px) {
+    .page {
+        padding: 60px 6% 100px;
+    }
+
+    .editor-content {
+        flex-direction: column;
+    }
+
+    .editor-photo {
+        width: 100%;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .cover-story-layout {
+        flex-direction: column;
+    }
+
+    .cover-photo-grid {
+        width: 100%;
+    }
+    .photo-spread-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 150px;
+    }
+
+    .spread-photo-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }  
+    
+    .timeline-item,
+    .timeline-item.reverse {
+        flex-direction: column;
+    }
+
+    .timeline-item img {
+        width: 100%;
+    }
+    .newspaper-page {
+        padding: 20px 20px 140px;
+    }
+
+    .newspaper-top h1 {
+        font-size: 35px;
+    }
+
+    .news-headline {
+        font-size: 34px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .side-news {
+        border-left: none;
+        border-top: 1px solid #171717;
+        padding-left: 0;
+        padding-top: 15px;
+    }
+
+    .story-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .story-columns article {
+        border-right: none;
+        border-bottom: 1px solid #171717;
+        padding-right: 0;
+        padding-bottom: 15px;
+    }
+
+    .story-columns article:last-child {
+        border-bottom: none;
+    }
+
+    .news-main-image {
+        height: 250px;
+    }
+    .back-cover {
+        padding: 20px;
+    }
+
+    .back-title {
+        margin-top: 35px;
+    }
+
+    .back-title h1 {
+        font-size: 52px;
+    }
+
+    .back-title p {
+        font-size: 20px;
+    }
+
+    .back-quote {
+        left: 35px;
+        top: 28%;
+
+        font-size: 14px;
+    }
+
+    .features {
+        right: 30px;
+        top: 28%;
+
+        width: 150px;
+    }
+
+    .features h2 {
+        font-size: 20px;
+    }
+
+    .features p {
+        font-size: 11px;
+    }
+
+    .rahii-brand {
+        bottom: 150px;
+    }
+
+    .rahii-brand h2 {
+        font-size: 42px;
+    }
+
+    .qualities {
+        font-size: 7px;
+    }
+
+    .barcode {
+        left: 30px;
+    }
+
+    .final-message {
+        right: 25px;
+        font-size: 12px;
+    }
+    .horoscope-wrapper {
+        padding: 30px 22px;
+    }
+
+    .prediction {
+        gap: 10px;
+    }
+
+    .prediction p {
+        font-size: 14px;
+    }
+
+    .horoscope-badge {
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+}

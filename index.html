@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RAHII's Birthday Magazine</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="cover">
+
+        <!-- RAHII'S PHOTO -->
+        <img src="./images/cover.jpg" alt="RAHII" class="cover-photo">
+
+        <!-- Dark pink overlay -->
+        <div class="overlay"></div>
+
+
+        <!-- ================= TOP TITLE ================= -->
+
+        <header class="top">
+
+            <div class="issue">
+                • &nbsp; T H E &nbsp; B I R T H D A Y &nbsp; I S S U E &nbsp; •
+            </div>
+
+            <h1>RAHII’s BIRTHDAY</h1>
+
+            <div class="magazine">
+                M A G A Z I N E
+            </div>
+
+        </header>
+
+
+        <!-- ================= LEFT SIDE ================= -->
+
+        <section class="left-side">
+
+            <div class="side-heading">
+                CHEERS TO
+            </div>
+
+            <div class="script">
+                You!
+                <span>♡</span>
+            </div>
+
+            <div class="line">
+                ───── ♡ ─────
+            </div>
+
+            <h2>
+                CELEBRATING<br>
+                AN INCREDIBLE<br>
+                GIRL
+            </h2>
+
+            <p>
+                Today is all about you,<br>
+                your journey, your<br>
+                dreams, and your<br>
+                beautiful heart. ♡
+            </p>
+
+        </section>
+
+
+        <!-- ================= RIGHT COLUMN (side + inside, same column, aligned) ================= -->
+
+        <div class="right-column">
+
+            <section class="right-side">
+
+                <div class="side-heading">
+                    MADE OF
+                </div>
+
+                <div class="grace">
+                    GRACE
+                </div>
+
+                <div class="strength">
+                    &amp; STRENGTH
+                </div>
+
+                <div class="line">
+                    ── ♡ ──
+                </div>
+
+                <p>
+                    She's got that<br>
+                    magic in her soul<br>
+                    and fire in her<br>
+                    heart. ♥
+                </p>
+
+            </section>
+
+
+            <section class="inside">
+
+                <h3>INSIDE</h3>
+
+                <p>• Sweet Memories</p>
+                <p>• Words of Love</p>
+                <p>• Fun Facts</p>
+                <p>• A Special Message<br>
+                    &nbsp;&nbsp;Just for You</p>
+
+                <div class="heart">♥</div>
+
+            </section>
+
+        </div>
+
+
+        <!-- ================= BOTTOM ================= -->
+
+        <section class="bottom">
+
+            <div class="happy">
+                Happy <span>♡</span>
+            </div>
+
+            <div class="birthday">
+                BIRTHDAY!
+            </div>
+
+            <div class="amazing">
+                TO AN AMAZING SOUL ♥
+            </div>
+
+            <div class="qualities">
+                BEAUTIFUL. KIND. SMART. FEARLESS.
+                <strong>YOU.</strong> ♥
+            </div>
+
+            <a href="magazine.html" class="open-btn">Open Magazine →</a>
+
+        </section>
+
+
+        <!-- ================= OPTIONAL MUSIC ================= -->
+
+        <audio id="bg-music" loop>
+            <source src="./images/soft-music.mp3" type="audio/mpeg">
+        </audio>
+        <button id="music-toggle" class="music-btn">🎵</button>
+
+    </div>
+
+    <script>
+        const musicBtn = document.getElementById('music-toggle');
+        const music = document.getElementById('bg-music');
+        let playing = false;
+
+        musicBtn.addEventListener('click', () => {
+            if (playing) {
+                music.pause();
+                musicBtn.textContent = '🎵';
+            } else {
+                music.play();
+                musicBtn.textContent = '🔇';
+            }
+            playing = !playing;
+        });
+    </script>
+
+</body>
+</html>
